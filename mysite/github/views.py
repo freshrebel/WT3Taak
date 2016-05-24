@@ -25,5 +25,6 @@ def getrepos(request):
 
 def constructDownloadURL(url):
     #https://github.com/user/repo/zipball/master
-    return (url + "/zipball/master")
+    #https://github.com/user/repo/archive/master.zip
+    return (url + "/archive/master.zip")
     
