@@ -19,8 +19,9 @@ def getrepos(request):
     output = ""
     for rep in repArray:
         url = constructDownloadURL(rep)
-        webbrowser.open(url, new=2, autoraise=True)
-        output += url
+        output += "<a href=''>" + url + "</a><br>"
+        response = HttpResponse(content_type='application/zip')
+        response['Content-Disposition'] = 'attachment; filename="' + url + '"'
     return HttpResponse(output)
 
 def constructDownloadURL(url):
